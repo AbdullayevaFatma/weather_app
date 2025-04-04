@@ -12,7 +12,7 @@ import snow from "../assets/snow.png";
 import { toastErrorNotify, toastWarnNotify } from "../helpers/ToastNotify";
 
 const Weather = () => {
-  const [weatherData, setWeatherData] = useState(false);
+  const [weatherData, setWeatherData] = useState(null);
   const inputRef = useRef();
 
   const apiIconCodes = {
@@ -38,7 +38,7 @@ const Weather = () => {
   }, []);
 
   const searchFunc = async (city) => {
-    if (city === "") {
+    if (city.trim() === "") {
       toastWarnNotify("Please enter a city name");
       return;
     }

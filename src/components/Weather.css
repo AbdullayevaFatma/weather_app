@@ -27,15 +27,19 @@
 
 .search-bar img {
   width: 46px;
+  height: 46px;
   padding: 14px;
   border-radius: 50%;
   background: #ebfffc;
   cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  
 }
 
 .sun-icon {
   width: 110px;
-  margin: 30px 0;
+  margin: 30px auto;
 }
 .temperature {
   color: white;
@@ -46,6 +50,7 @@
 .location {
   color: #fff;
   font-size: 25px;
+  margin-top: 10px;
 }
 .weather-info {
   width: 100%;
