@@ -43,7 +43,9 @@ const Weather = () => {
       return;
     }
     try {
-      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=9affecd7a72e6abf69aa806d791ba39e`;
+      const apıUrl = import.meta.env.VITE_API_URL
+      const appId = import.meta.env.VITE_APP_ID
+      const url = `${apıUrl}/data/2.5/weather?q=${city}&units=metric&appid=${appId}`;
       const res = await fetch(url);
       const data = await res.json();
       console.log(data);
@@ -55,6 +57,7 @@ const Weather = () => {
         temperature: Math.floor(data.main.temp),
         icon: icon,
       });
+      inputRef.current.value = ""
     } catch (error) {
       console.log(error);
       toastErrorNotify(error.message);
